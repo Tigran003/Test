@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Page</title>
+</head>
+<body>
+    {% load category_tags %}
+
+    <nav>
+        {% draw_category_tree_html 'main_menu' %}
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends "UpTrader/base_generic.html" %}
+
+{% block content %}
+    <h1>{{ category.name }}</h1>
+    <ul>
+        {% for child in category.children.all %}
+            <li>
+                <a href="{{ child.get_absolute_url }}">{{ child.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+<ul>
+    {% for category in categories %}
+        <li class="{% if category.is_active %}active{% endif %}">
+            <a href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+            {% if category.children %}
+                <ul>
+                    {% for child in category.children %}
+                        {% include 'UpTrader/category_item.html' with category=child %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
